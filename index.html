@@ -15,8 +15,10 @@
   <body>
     <div class="container">
       <header>
-        <h2>Rain or Shine</h2>
-        <h3>weather app ☁️</h3>
+        <div class="app-name">
+          <h2>Rain or Shine</h2>
+          <h3>weather app ☁️</h3>
+        </div>
         <form class="search-form">
           <input
             type="search"
@@ -28,15 +30,21 @@
         </form>
       </header>
       <main>
-        <h1>Paris</h1>
-        <div>
-          <p>
-            Tuesday 14:50, scattered clouds
-            <br />
-            Humidity: 50%, Wind: 14.8 km/h
-          </p>
+        <div class="weather-data">
+          <div>
+            <h1 class="app-city">Paris</h1>
+            <p class="app-details">
+              Tuesday 14:50, scattered clouds
+              <br />
+              Humidity:<strong>50%</strong>, Wind: <strong>14.8 km/h</strong>
+            </p>
+          </div>
+          <div class="temperature-container">
+            <div class="app-temp-icon">⛅</div>
+            <div class="app-temp-value">14</div>
+            <div class="app-temp-unit">°C</div>
+          </div>
         </div>
-        <div>⛅ 14°C</div>
       </main>
 
       <footer>

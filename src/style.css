@@ -4,6 +4,7 @@ body {
     rgb(82, 229, 231) 10%,
     rgb(19, 12, 183) 100%
   );
+  background-repeat: no-repeat;
   font-family: "Roboto Mono", monospace;
 }
 
@@ -14,4 +15,78 @@ body {
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   border-radius: 10px;
   padding: 30px;
+}
+
+header {
+  border-bottom: 1px solid palegreen;
+  padding: 0 0 30px 0;
+}
+
+.search-form-input {
+  background-color: #feffdf;
+  border: none;
+  border-radius: 6px;
+  width: 80%;
+  padding: 15px 20px;
+  font-size: 15px;
+}
+
+.search-form-btn {
+  background-color: #f8da5b;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 6px;
+  color: #00204a;
+  font-size: 15px;
+}
+
+.weather-data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-temp-value {
+  font-size: 88px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.app-temp-unit {
+  margin-top: 20px;
+  font-size: 28px;
+}
+.app-temp-icon {
+  font-size: 44px;
+  margin-top: 22px;
+}
+
+.temperature-container {
+  display: flex;
+}
+
+main {
+  padding: 30px 0;
+}
+
+.app-city {
+  margin: 0;
+  font-size: 38px;
+  line-height: 48px;
+}
+
+.app-details {
+  font-size: 15px;
+  line-height: 20px;
+  color: black;
+}
+
+.app-details strong {
+  color: #be3144;
+}
+
+footer {
+  border-top: 1px solid paleturquoise;
+  padding: 30px 0 0 0;
+  text-align: center;
+  font-size: 12px;
 }
