@@ -6,10 +6,11 @@ body {
   );
   background-repeat: no-repeat;
   font-family: "Roboto Mono", monospace;
+  color: #00204a;
 }
 
 .container {
-  background-color: white;
+  background-color: #f7f7f7;
   max-width: 600px;
   margin: 45px auto;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
@@ -18,8 +19,16 @@ body {
 }
 
 header {
-  border-bottom: 1px solid palegreen;
+  border-bottom: 1px solid #e4f1fe;
   padding: 0 0 30px 0;
+}
+
+.app-name {
+  text-align: center;
+}
+
+h3 {
+  margin-left: 100px;
 }
 
 .search-form-input {
@@ -85,7 +94,7 @@ main {
 }
 
 footer {
-  border-top: 1px solid paleturquoise;
+  border-top: 1px solid #e4f1fe;
   padding: 30px 0 0 0;
   text-align: center;
   font-size: 12px;
