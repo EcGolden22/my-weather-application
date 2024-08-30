@@ -14,6 +14,7 @@ function updateWeatherData(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed} mph`;
   timeElement.innerHTML = formatDate(date);
+}
 
 function formatDate(date) {
   let minutes = date.getMinutes();
