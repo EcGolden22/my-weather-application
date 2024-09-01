@@ -56,3 +56,17 @@ let searchElement = document.querySelector("#search-form");
 searchElement.addEventListener("submit", handleSearch);
 
 citySearch("Philadelphia");
+
+let forcast = document.querySelector("#forcast");
+
+forcast.innerHTML = `<div class="weather-forcast-day">
+            <div class="weather-forcast-date">Tue</div>
+            <div class="weather-forcast-icon">🌞</div>
+            <div class="weather-forcast-temperatures">
+              <div class="weather-forcast-temperature">
+                <strong>15°</strong>
+              </div>
+              <div class="weather-forcast-temperature">9°</div>
+            </div>
+          </div>
+          `;
