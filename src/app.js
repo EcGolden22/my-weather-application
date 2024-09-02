@@ -52,14 +52,8 @@ function handleSearch(event) {
   citySearch(searchInput.value);
 }
 
-let searchElement = document.querySelector("#search-form");
-searchElement.addEventListener("submit", handleSearch);
-
-citySearch("Philadelphia");
-
-let forcast = document.querySelector("#forcast");
-
-forcast.innerHTML = `<div class="weather-forcast-day">
+function displayForcast() {
+  `<div class="weather-forcast-day">
             <div class="weather-forcast-date">Tue</div>
             <div class="weather-forcast-icon">🌞</div>
             <div class="weather-forcast-temperatures">
@@ -70,3 +64,31 @@ forcast.innerHTML = `<div class="weather-forcast-day">
             </div>
           </div>
           `;
+}
+
+let searchElement = document.querySelector("#search-form");
+searchElement.addEventListener("submit", handleSearch);
+
+citySearch("Philadelphia");
+displayForcast();
+
+let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+let forcastHtml = "";
+
+days.forEach(function (day) {
+  forcastHtml =
+    forcastHtml +
+    `<div class="weather-forcast-day">
+            <div class="weather-forcast-date">${day}</div>
+            <div class="weather-forcast-icon">🌞</div>
+            <div class="weather-forcast-temperatures">
+              <div class="weather-forcast-temperature">
+                <strong>15°</strong>
+              </div>
+              <div class="weather-forcast-temperature">9°</div>
+            </div>
+          </div>
+          `;
+});
+let forcastElement = document.querySelector("#forcast");
+forcastElement.innerHTML = forcastHtml;
