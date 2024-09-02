@@ -16,6 +16,8 @@ function updateWeatherData(response) {
   windElement.innerHTML = `${response.data.wind.speed} mph`;
   timeElement.innerHTML = formatDate(date);
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon"/>`;
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -52,43 +54,37 @@ function handleSearch(event) {
   citySearch(searchInput.value);
 }
 
-function displayForcast() {
-  `<div class="weather-forcast-day">
-            <div class="weather-forcast-date">Tue</div>
-            <div class="weather-forcast-icon">🌞</div>
-            <div class="weather-forcast-temperatures">
-              <div class="weather-forcast-temperature">
+function getForecast(city) {
+  let apiKey = "433f0fed8cd1a00748o3e6b5ta206078";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`;
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
+
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `<div class="weather-forcast-day">
+            <div class="weather-forecast-date">${day}</div>
+            <div class="weather-forecast-icon">🌞</div>
+            <div class="weather-forecast-temperatures">
+              <div class="weather-forecast-temperature">
                 <strong>15°</strong>
               </div>
-              <div class="weather-forcast-temperature">9°</div>
+              <div class="weather-forecast-temperature">9°</div>
             </div>
           </div>
           `;
+  });
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
 }
-
 let searchElement = document.querySelector("#search-form");
 searchElement.addEventListener("submit", handleSearch);
 
 citySearch("Philadelphia");
-displayForcast();
-
-let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
-let forcastHtml = "";
-
-days.forEach(function (day) {
-  forcastHtml =
-    forcastHtml +
-    `<div class="weather-forcast-day">
-            <div class="weather-forcast-date">${day}</div>
-            <div class="weather-forcast-icon">🌞</div>
-            <div class="weather-forcast-temperatures">
-              <div class="weather-forcast-temperature">
-                <strong>15°</strong>
-              </div>
-              <div class="weather-forcast-temperature">9°</div>
-            </div>
-          </div>
-          `;
-});
-let forcastElement = document.querySelector("#forcast");
-forcastElement.innerHTML = forcastHtml;
